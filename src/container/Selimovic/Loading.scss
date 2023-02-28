@@ -1,12 +1,9 @@
 .app_loading {
   background: var(--black-color);
+  width: 100vw;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
-
-  .logo-dimension {
-    width: var(--size-img);
-  }
+  position: fixed;
+  z-index: 1;
 
   /************* Gestion de la première partie de l'animation *************/
   .app_loading_start {
@@ -18,9 +15,9 @@
 
     .app_loading_logo_rotation {
       opacity: var(--opacity);
-      animation: hideBlock step-end (var(--page-loading-duration-total-anim) -0.3s),
-        loadingLogoRotation var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim),
-        loadingLogoGravityFirst var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim);
+      animation: hideBlock step-end (var(--selimovic-duration-total-anim) -0.3s),
+        loadingLogoRotation var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
+        loadingLogoGravityFirst var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
     }
 
     .app_loading_bar {
@@ -31,7 +28,7 @@
       height: 24px;
       opacity: var(--opacity);
 
-      animation: hideBlock step-end (var(--page-loading-duration-first-anim) -0.2s);
+      animation: hideBlock step-end (var(--selimovic-duration-first-anim) -0.2s);
 
       .app_loading_bar_progress {
         border-radius: 20px;
@@ -41,7 +38,7 @@
         margin-top: 3px;
         background-color: var(--white-color);
 
-        animation: loadingBarProgress linear var(--page-loading-duration-first-anim);
+        animation: loadingBarProgress linear var(--selimovic-duration-first-anim);
       }
     }
   }
@@ -50,16 +47,16 @@
   .app_loading_end {
     .app_loading_logo_rotation {
       opacity: var(--opacity);
-      animation: hideBlock step-end var(--page-loading-duration-total-anim),
-        loadingLogoRotation var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim),
-        loadingLogoGravitySecond var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim);
+      animation: hideBlock step-end var(--selimovic-duration-total-anim),
+        loadingLogoRotation var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
+        loadingLogoGravitySecond var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
     }
 
     .app_loading_logo1,
     .app_loading_logo2,
     .app_loading_logo3 {
       position: absolute;
-      top: calc(var(--size-img) * -1);
+      top: calc(var(--size-logo) * -1);
     }
 
     .app_loading_logo1 {
@@ -67,7 +64,7 @@
     }
 
     .app_loading_logo2 {
-      left: calc(50% - (var(--size-img) / 2));
+      left: calc(50% - (var(--size-logo) / 2));
     }
 
     .app_loading_logo3 {
@@ -121,6 +118,6 @@
   from {
   }
   to {
-    margin-top: calc(110vh + var(--size-img));
+    margin-top: calc(110vh + var(--size-logo));
   }
 }

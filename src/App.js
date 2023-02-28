@@ -1,10 +1,10 @@
-import { Loading } from "./container";
+import { Selimovic } from "./container";
 import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      <Loading />
+      <Selimovic />
     </div>
   );
 }

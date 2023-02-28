@@ -4,12 +4,12 @@
     --black-color: black;
     --white-color: white;
 
-    --size-img: 10rem;
+    --size-logo: 10rem;
 
     /** Gestion animation **/
-    --page-loading-duration-first-anim: 2s;
-    --page-loading-duration-second-anim: 3s;
-    --page-loading-duration-total-anim: 5s;
+    --selimovic-duration-first-anim: 2s;
+    --selimovic-duration-second-anim: 3s;
+    --selimovic-duration-total-anim: 5s;
     --opacity: 0;
 }
 

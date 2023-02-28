@@ -83,7 +83,6 @@
   }
 }
 
-/************************** Première partie animation **************************/
 /* Permet de charger la progress bar */
 @keyframes loadingBarProgress {
   from {
@@ -94,7 +93,16 @@
   }
 }
 
-/* Permet de bouger le logo vers le bas */
+/* Permet de faire de rotate le logo */
+@keyframes loadingLogoRotation {
+  from {
+  }
+  to {
+    transform: rotate(500deg);
+  }
+}
+
+/* Permet de bouger le logo vers le bas => Première partie animation */
 @keyframes loadingLogoGravityFirst {
   from {
   }
@@ -103,17 +111,7 @@
   }
 }
 
-/* Permet de faire de rotate le logo */
-@keyframes loadingLogoRotation {
-  from {
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/************************** Deuxième partie animation **************************/
-/* Permet de bouger le logo vers le bas */
+/* Permet de bouger le logo vers le bas => Deuxième partie animation */
 @keyframes loadingLogoGravitySecond {
   from {
   }

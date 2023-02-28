@@ -1,0 +1,126 @@
+.app_loading {
+  background: var(--black-color);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .logo-dimension {
+    width: var(--size-img);
+  }
+
+  /************* Gestion de la première partie de l'animation *************/
+  .app_loading_start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+    .app_loading_logo_rotation {
+      opacity: var(--opacity);
+      animation: hideBlock step-end (var(--page-loading-duration-total-anim) -0.3s),
+        loadingLogoRotation var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim),
+        loadingLogoGravityFirst var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim);
+    }
+
+    .app_loading_bar {
+      background: var(--black-color);
+      border: 2px solid var(--white-color);
+      border-radius: 20px;
+      width: 250px;
+      height: 24px;
+      opacity: var(--opacity);
+
+      animation: hideBlock step-end (var(--page-loading-duration-first-anim) -0.2s);
+
+      .app_loading_bar_progress {
+        border-radius: 20px;
+        height: 18px;
+        max-width: calc(100% - 8px);
+        margin-left: 1.5%;
+        margin-top: 3px;
+        background-color: var(--white-color);
+
+        animation: loadingBarProgress linear var(--page-loading-duration-first-anim);
+      }
+    }
+  }
+
+  /************* Gestion de la seconde partie de l'animation *************/
+  .app_loading_end {
+    .app_loading_logo_rotation {
+      opacity: var(--opacity);
+      animation: hideBlock step-end var(--page-loading-duration-total-anim),
+        loadingLogoRotation var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim),
+        loadingLogoGravitySecond var(--page-loading-duration-second-anim) linear var(--page-loading-duration-first-anim);
+    }
+
+    .app_loading_logo1,
+    .app_loading_logo2,
+    .app_loading_logo3 {
+      position: absolute;
+      top: calc(var(--size-img) * -1);
+    }
+
+    .app_loading_logo1 {
+      left: 0;
+    }
+
+    .app_loading_logo2 {
+      left: calc(50% - (var(--size-img) / 2));
+    }
+
+    .app_loading_logo3 {
+      right: 0;
+    }
+  }
+}
+
+/* Permet de cacher la progress bar */
+@keyframes hideBlock {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/************************** Première partie animation **************************/
+/* Permet de charger la progress bar */
+@keyframes loadingBarProgress {
+  from {
+    width: 5%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Permet de bouger le logo vers le bas */
+@keyframes loadingLogoGravityFirst {
+  from {
+  }
+  to {
+    margin-top: 220vh;
+  }
+}
+
+/* Permet de faire de rotate le logo */
+@keyframes loadingLogoRotation {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/************************** Deuxième partie animation **************************/
+/* Permet de bouger le logo vers le bas */
+@keyframes loadingLogoGravitySecond {
+  from {
+  }
+  to {
+    margin-top: calc(110vh + var(--size-img));
+  }
+}

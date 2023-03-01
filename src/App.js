@@ -1,4 +1,4 @@
-import { Loading } from "./container";
+import { Loading, Selimovic } from "./container";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
@@ -7,6 +7,7 @@ function App() {
     <div className="app">
       <NavBar />
       <Loading />
+      <Selimovic />
     </div>
   );
 }

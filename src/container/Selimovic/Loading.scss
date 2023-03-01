@@ -5,8 +5,7 @@
   position: fixed;
   z-index: 0;
 
-  animation: showAnimationLoading step-start
-    calc(var(--selimovic-duration-total-anim));
+  animation: showAnimationLoading step-start calc(var(--selimovic-duration-total-anim));
 
   /************* Gestion de la première partie de l'animation *************/
   .app_loading_start {
@@ -19,10 +18,8 @@
     .app_loading_logo_rotation {
       opacity: var(--opacity);
       animation: hideBlock step-end (var(--selimovic-duration-total-anim) -0.3s),
-        loadingLogoRotation var(--selimovic-duration-second-anim) linear
-          var(--selimovic-duration-first-anim),
-        loadingLogoGravityFirst var(--selimovic-duration-second-anim) linear
-          var(--selimovic-duration-first-anim);
+        loadingLogoRotation var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
+        loadingLogoGravityFirst var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
     }
 
     .app_loading_bar {
@@ -43,8 +40,7 @@
         margin-top: 3px;
         background-color: var(--white-color);
 
-        animation: loadingBarProgress linear
-          var(--selimovic-duration-first-anim);
+        animation: loadingBarProgress linear var(--selimovic-duration-first-anim);
       }
     }
   }
@@ -54,10 +50,8 @@
     .app_loading_logo_rotation {
       opacity: var(--opacity);
       animation: hideBlock step-end var(--selimovic-duration-total-anim),
-        loadingLogoRotation var(--selimovic-duration-second-anim) linear
-          var(--selimovic-duration-first-anim),
-        loadingLogoGravitySecond var(--selimovic-duration-second-anim) linear
-          var(--selimovic-duration-first-anim);
+        loadingLogoRotation var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
+        loadingLogoGravitySecond var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
     }
 
     .app_loading_logo1,
@@ -88,16 +82,15 @@
       .app_loading_logo_rotation {
         opacity: var(--opacity);
         animation: hideBlock step-end var(--selimovic-duration-total-anim),
-          loadingLogoRotationNavBar var(--selimovic-duration-second-anim) linear
+          loadingLogoRotationNavBar calc(var(--selimovic-duration-second-anim) - 0.2s) linear
             var(--selimovic-duration-first-anim) 1,
-          loadingLogoGravityNavBar var(--selimovic-duration-second-anim) linear
-            var(--selimovic-duration-first-anim);
+          loadingLogoGravityNavBar var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
       }
     }
   }
 }
 
-/* Permet d'afficher l'animation loading */
+/* Permet d'afficher l'animation loading "la page" */
 @keyframes showAnimationLoading {
   from {
     z-index: 0;

@@ -12,23 +12,19 @@ const NavBar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <a href="#Accueil" aria-label="Redirect Accueil">
+        <a href="#Selimovic" aria-label="Redirect Accueil">
           <img className="logo-dimension" src={images.logoTete} alt="logo" />
         </a>
-        <ul className="app__navbar-links"> test</ul>
-      </div>
-      <ul className="app__navbar-links">
-        {/*["Accueil", "À propos", "Réalisations", "Compétences", "Contact"].map(
-          (item) => (
-            <li className="app__flex p-text" key={`link-${item}`}>
-              <div />
+        <ul className="app__navbar-links">
+          {menu.map((item, index) => (
+            <li key={`link-${item}`}>
               <a href={`#${item}`} aria-label="Redirect menu">
                 {item}
               </a>
             </li>
-          )
-          )*/}
-      </ul>
+          ))}
+        </ul>
+      </div>
 
       {/*
       <div className="app__navbar-menu">

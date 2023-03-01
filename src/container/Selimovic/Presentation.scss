@@ -3,18 +3,5 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 2;
   color: var(--white-color);
-
-  animation: hideBeforeEndofLoading step-start calc(var(--selimovic-duration-total-anim) - 0.2s);
-}
-
-/* Permet de cacher la partie .app_presentation en attendant la fin de l'animation .app_loading */
-@keyframes hideBeforeEndofLoading {
-  from {
-    z-index: 2;
-  }
-  to {
-    z-index: 0;
-  }
 }

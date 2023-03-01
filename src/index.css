@@ -1,19 +1,19 @@
 :root {
-    --font-base: sans-serif;
+  --font-base: sans-serif;
 
-    --black-color: black;
-    --white-color: white;
+  --black-color: black;
+  --white-color: white;
 
-    --size-logo: 10rem;
+  --size-logo: 10rem;
 
-    /** Gestion animation **/
-    --selimovic-duration-first-anim: 2s;
-    --selimovic-duration-second-anim: 3s;
-    --selimovic-duration-total-anim: 5s;
-    --opacity: 0;
+  /** Gestion animation **/
+  --selimovic-duration-first-anim: 2s;
+  --selimovic-duration-second-anim: 3s;
+  --selimovic-duration-total-anim: 5s;
+  --opacity: 0;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }

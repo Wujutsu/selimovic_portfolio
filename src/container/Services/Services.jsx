@@ -5,7 +5,7 @@ import "./Services.scss";
 
 const Services = () => {
   return (
-    <div className="app_services app-block">
+    <div className="app_services app-block" id="Services">
       <article>
         <div className="app_services_block ">
           <div className="app_services_block_point hideElement">

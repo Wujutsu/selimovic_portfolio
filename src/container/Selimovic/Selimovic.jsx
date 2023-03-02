@@ -12,7 +12,6 @@ const Selimovic = () => {
 
   function onResize() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    console.log(widthWindows);
   }
 
   window.addEventListener("resize", onResize);

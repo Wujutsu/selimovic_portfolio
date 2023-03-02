@@ -1,0 +1,26 @@
+.app_services {
+  article {
+    .app_services_block {
+      display: flex;
+
+      .app_services_block_point {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+
+        .app_services_show_point {
+          width: 40px;
+          height: 40px;
+          background: white;
+          border-radius: 50px;
+        }
+      }
+
+      .head-text,
+      p {
+        width: 100%;
+      }
+    }
+  }
+}

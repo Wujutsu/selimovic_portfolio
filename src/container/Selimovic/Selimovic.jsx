@@ -30,7 +30,7 @@ const Selimovic = () => {
             En <span>Freelance</span>
           </div>
 
-          <p className="italic bold p-jump">
+          <p className="italic bold jump">
             “Une identité visuelle forte est cruciale pour toute entreprise qui souhaite se démarquer et gagner en
             visibilité.”
           </p>

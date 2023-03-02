@@ -1,4 +1,4 @@
-import { Loading, Selimovic, Portfolio } from "./container";
+import { Loading, Selimovic, Portfolio, Services, Contact } from "./container";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
@@ -9,6 +9,8 @@ function App() {
       <Loading />
       <Selimovic />
       <Portfolio />
+      <Services />
+      <Contact />
     </div>
   );
 }

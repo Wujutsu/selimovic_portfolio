@@ -1,0 +1,96 @@
+.app_portfolio {
+  .app_portfolio_block {
+    position: relative;
+
+    .app_portfolio_img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        height: 450px;
+      }
+    }
+
+    .app_portfolio_texte {
+      font-size: 1.5rem;
+      position: absolute;
+      left: -280px;
+      right: 0;
+      top: 244px;
+      text-align: center;
+    }
+
+    .app_portfolio_btn {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 300px;
+      text-align: center;
+      button {
+        width: 165px;
+        padding: 5px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    }
+
+    @media screen and (max-width: 950px) {
+      .app_portfolio_img {
+        img {
+          height: 350px;
+        }
+      }
+      .app_portfolio_texte {
+        font-size: 1.2rem;
+        left: -210px;
+        top: 191px;
+      }
+      .app_portfolio_btn {
+        top: 240px;
+        button {
+          width: 130px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .app_portfolio_img {
+        img {
+          height: 250px;
+        }
+      }
+      .app_portfolio_texte {
+        font-size: 1rem;
+        left: -130px;
+        top: 134px;
+      }
+      .app_portfolio_btn {
+        top: 170px;
+        button {
+          width: 120px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      .app_portfolio_img {
+        img {
+          height: 180px;
+        }
+      }
+      .app_portfolio_texte {
+        font-size: 0.7rem;
+        left: -96px;
+        top: 98px;
+      }
+      .app_portfolio_btn {
+        top: 125px;
+        button {
+          width: 120px;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,29 @@
 .app_selimovic {
-  position: fixed;
-  color: white;
-  background-color: red;
-  width: 50px;
-  height: 50px;
-  top: 200px;
-  left: 500px;
+  .app_selimovic_presentation {
+  }
+
+  .app_selimovic_quisuisje {
+    display: flex;
+
+    article {
+    }
+
+    .app_selimovic_quisuisje_img {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 400px;
+        margin-top: -1rem;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      display: block;
+
+      .app_selimovic_quisuisje_img {
+        justify-content: center;
+      }
+    }
+  }
 }

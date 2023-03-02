@@ -1,6 +1,45 @@
 .app {
+  color: var(--white-color);
+  background: var(--black-color);
 }
 
 .logo-dimension {
   width: var(--size-logo);
+}
+
+.app-block {
+  padding: 11rem 4rem;
+}
+
+.head-text {
+  font-family: folsom-black;
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  span {
+    background: var(--white-color);
+    color: var(--black-color);
+    padding-bottom: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+article {
+  font-size: 1.1rem;
+
+  p {
+    padding-top: 2rem;
+  }
+
+  .p-jump {
+    padding-top: 3rem;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
 }

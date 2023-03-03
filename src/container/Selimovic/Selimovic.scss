@@ -1,30 +1,27 @@
-.app_selimovic {
-  .app_selimovic_presentation {
+.app_selimovic_presentation {
+}
+
+.app_selimovic_quisuisje {
+  display: flex;
+
+  article {
   }
 
-  .app_selimovic_quisuisje {
+  .app_selimovic_quisuisje_img {
     display: flex;
+    align-items: start;
 
-    article {
+    img {
+      width: 400px;
+      margin-top: -1rem;
     }
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: block;
 
     .app_selimovic_quisuisje_img {
-      display: flex;
-      align-items: center;
-      margin-bottom: -50px;
-
-      img {
-        width: 400px;
-        margin-top: -1rem;
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      display: block;
-
-      .app_selimovic_quisuisje_img {
-        justify-content: center;
-      }
+      justify-content: center;
     }
   }
 }

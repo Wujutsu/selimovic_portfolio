@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { images } from "../../constants";
 
 import "./Selimovic.scss";
@@ -17,7 +18,7 @@ const Selimovic = () => {
   window.addEventListener("resize", onResize);
 
   return (
-    <div className="app_selimovic" id="Selimovic">
+    <div id="Selimovic">
       <div className="app_selimovic_presentation app-block">
         <article>
           <div className="head-text">

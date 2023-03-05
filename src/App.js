@@ -10,7 +10,6 @@ function App() {
       <Selimovic />
       <Portfolio />
       <Services />
-      <Contact />
     </div>
   );
 }

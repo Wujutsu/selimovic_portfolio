@@ -1,27 +1,85 @@
 .app_services {
-  article {
-    .app_services_block {
-      display: flex;
-
-      .app_services_block_point {
+  .app_services_one {
+    article {
+      .app_services_block {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100px;
 
-        .app_services_show_point {
+        .app_services_block_point {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100px;
+
+          .app_services_show_point {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50px;
+          }
+        }
+
+        .head-text,
+        p {
+          width: 100%;
+          padding-right: 50px;
+        }
+      }
+    }
+  }
+
+  .app_services_two {
+    padding-bottom: 8rem;
+    .app_services_schema_services {
+      padding-left: 10%;
+      padding-right: 12%;
+      margin: auto;
+
+      .line {
+        width: 100%;
+        height: 5px;
+        background-color: white;
+      }
+
+      .all_point {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -24px;
+
+        .point {
+          position: relative;
           width: 40px;
           height: 40px;
           background: white;
           border-radius: 50px;
+          font-family: folsom-black;
+          font-size: 1.5rem;
+          z-index: 5;
+
+          .point_texte_conception {
+            position: absolute;
+            top: -50px;
+            left: -65px;
+          }
+
+          .point_texte_realisation {
+            position: absolute;
+            top: 60px;
+            left: -65px;
+          }
+
+          .point_texte_automatisation {
+            position: absolute;
+            top: -50px;
+            left: -100px;
+          }
         }
       }
+    }
 
-      .head-text,
-      p {
-        width: 100%;
-        padding-right: 50px;
-      }
+    .app_services_two_texte {
+      position: relative;
+      color: black;
+      z-index: 5;
     }
   }
 }

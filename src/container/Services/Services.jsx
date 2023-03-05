@@ -1,67 +1,140 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { images } from "../../constants";
 
 import "./Services.scss";
 
 const Services = () => {
+  const [ref1, isVisible1] = useInView({ threshold: 0.7 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.3 });
+  const variantsVisibility = {
+    visible: {
+      opacity: 1,
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <div className="app_services app-block" id="Services">
-      <article>
-        <div className="app_services_block ">
-          <div className="app_services_block_point hideElement">
-            <div className="app_services_show_point"></div>
+    <div className="app_services">
+      <motion.div
+        ref={ref1}
+        variants={variantsVisibility}
+        animate={isVisible1 ? "visible" : "hidden"}
+        transition={{ duration: 0.5, ease: "linear" }}
+        className="app_services_one app-block"
+        id="Services"
+      >
+        <article>
+          <div className="app_services_block ">
+            <div className="app_services_block_point hideElement">
+              <div className="app_services_show_point"></div>
+            </div>
+            <div className="head-text center">Conception</div>
           </div>
-          <div className="head-text center">Conception</div>
-        </div>
 
-        <div className="app_services_block center">
-          <div className="app_services_block_point">
-            <div className="app_services_show_point"></div>
+          <div className="app_services_block center">
+            <div className="app_services_block_point">
+              <div className="app_services_show_point"></div>
+            </div>
+            <p className="center">
+              Après m’être assuré d’avoir compris vos objectifs et d’avoir déterminer les éléments nécessaires à la
+              réalisation du projet, je planifie les différentes étapes de celui-ci en fonction des contraintes
+              imposées. Je conçois <span className="bold">VOTRE</span> projet en fonction de{" "}
+              <span className="bold">VOS</span> besoins
+            </p>
           </div>
-          <p className="center">
-            Après m’être assuré d’avoir compris vos objectifs et d’avoir déterminer les éléments nécessaires à la
-            réalisation du projet, je planifie les différentes étapes de celui-ci en fonction des contraintes imposées.
-            Je conçois <span className="bold">VOTRE</span> projet en fonction de <span className="bold">VOS</span>{" "}
-            besoins
-          </p>
-        </div>
-      </article>
+        </article>
 
-      <article className="jump">
-        <div className="app_services_block ">
-          <div className="app_services_block_point hideElement">
-            <div className="app_services_show_point"></div>
+        <motion.article whileInView={{ y: [100, 0] }} transition={{ duration: 1 }} className="jump">
+          <div className="app_services_block ">
+            <div className="app_services_block_point hideElement">
+              <div className="app_services_show_point"></div>
+            </div>
+            <div className="head-text center">RÉALISATION</div>
           </div>
-          <div className="head-text center">RÉALISATION</div>
-        </div>
-        <div className="app_services_block">
-          <div className="app_services_block_point">
-            <div className="app_services_show_point"></div>
+          <div className="app_services_block">
+            <div className="app_services_block_point">
+              <div className="app_services_show_point"></div>
+            </div>
+            <p className="center">
+              En respectant et en m’imprégnant de votre charte graphique, je mets en œuvre les éléments nécessaires à la
+              réalisation du projet, tout en respectant les spécifications définies lors de la phase de conception.
+            </p>
           </div>
-          <p className="center">
-            En respectant et en m’imprégnant de votre charte graphique, je mets en œuvre les éléments nécessaires à la
-            réalisation du projet, tout en respectant les spécifications définies lors de la phase de conception.
-          </p>
-        </div>
-      </article>
+        </motion.article>
 
-      <article className="jump">
-        <div className="app_services_block ">
-          <div className="app_services_block_point hideElement">
-            <div className="app_services_show_point"></div>
+        <motion.article whileInView={{ y: [100, 0] }} transition={{ duration: 1 }} className="jump">
+          <div className="app_services_block ">
+            <div className="app_services_block_point hideElement">
+              <div className="app_services_show_point"></div>
+            </div>
+            <div className="head-text center">AUTOMATISATION</div>
           </div>
-          <div className="head-text center">AUTOMATISATION</div>
-        </div>
-        <div className="app_services_block">
-          <div className="app_services_block_point">
-            <div className="app_services_show_point"></div>
+          <div className="app_services_block">
+            <div className="app_services_block_point">
+              <div className="app_services_show_point"></div>
+            </div>
+            <p className="center">
+              Via la mise en place de logiciels de création graphique très simple d’utilisation, je m’assure de vous
+              donner la possibilité de décliner certains supports vous-même, et sans mon intervention !
+            </p>
           </div>
-          <p className="center">
-            Via la mise en place de logiciels de création graphique très simple d’utilisation, je m’assure de vous
-            donner la possibilité de décliner certains supports vous-même, et sans mon intervention !
+        </motion.article>
+      </motion.div>
+
+      <motion.div
+        ref={ref2}
+        variants={variantsVisibility}
+        animate={isVisible2 ? "visible" : "hidden"}
+        transition={{ duration: 0.5, ease: "linear" }}
+        className="app_services_two app-block"
+      >
+        {isVisible2 && (
+          <motion.div
+            whileInView={{ y: [-100, 0] }}
+            transition={{ duration: 1 }}
+            className="app_services_schema_services"
+          >
+            <div className="line"></div>
+            <div className="all_point">
+              <div className="point">
+                <div className="point_texte_conception">Conception</div>
+              </div>
+              <motion.div
+                animate={{ scale: [1, 50] }}
+                transition={{
+                  scale: { duration: 2, delay: 1.5 },
+                }}
+                className="point"
+              >
+                <div className="point_texte_realisation">Réalisation</div>
+              </motion.div>
+              <div className="point">
+                <div className="point_texte_automatisation">Automatisation</div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        <article className="app_services_two_texte center">
+          <p>De la prise de contact à la réalisation finale, 5 étapes importantes pour répondre à vos besoins :</p>
+          <p className="bold">
+            1. Échange par téléphone ou par mail fin de discuter du projet dans la globalité (budget, brief, deadline…).
           </p>
-        </div>
-      </article>
+          <p className="bold">
+            2. Organisation d’une réunion physique ou en distanciel pour définir les objectifs du projet, ainsi que pour
+            connaitre votre vision sur le style souhaité.
+          </p>
+          <p className="bold">3. Réalisation de différents moodboard basé sur nos discussions.</p>
+          <p className="bold">4. Une fois les 3 premières étapes validées : Début de la réalisation</p>
+          <p className="bold">
+            5. Modification de la création en fonction de vos commentaires, jusqu’à trouver le design parfait.
+          </p>
+        </article>
+      </motion.div>
     </div>
   );
 };

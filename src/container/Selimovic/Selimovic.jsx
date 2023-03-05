@@ -36,7 +36,7 @@ const Selimovic = () => {
         ref={ref1}
         variants={variantsVisibility}
         animate={isVisible1 ? "visible" : "hidden"}
-        transition={{ duration: 0.5, ease: "linear" }}
+        transition={{ duration: 1, ease: "linear" }}
         className="app_selimovic_presentation app-block "
       >
         <article>
@@ -72,7 +72,7 @@ const Selimovic = () => {
         ref={ref2}
         variants={variantsVisibility}
         animate={isVisible2 ? "visible" : "hidden"}
-        transition={{ duration: 0.5, ease: "linear" }}
+        transition={{ duration: 1, ease: "linear" }}
         className="app_selimovic_quisuisje app-block"
       >
         <article>
@@ -99,7 +99,7 @@ const Selimovic = () => {
         </article>
         {isVisible2 && (
           <motion.div
-            whileInView={{ x: [300, 0], y: [-100, 0], scale: [3, 1] }}
+            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.5, 1] }}
             transition={{ duration: 1 }}
             className="app_selimovic_quisuisje_img"
           >
@@ -108,7 +108,7 @@ const Selimovic = () => {
         )}
         {!isVisible2 && (
           <motion.div
-            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 3] }}
+            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.5] }}
             transition={{ duration: 1 }}
             className="app_selimovic_quisuisje_img"
           >

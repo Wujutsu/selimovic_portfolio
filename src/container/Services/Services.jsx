@@ -106,7 +106,7 @@ const Services = () => {
               <motion.div
                 animate={{ scale: [1, 50] }}
                 transition={{
-                  scale: { duration: 2, delay: 1.5 },
+                  scale: { duration: 2, delay: 1 },
                 }}
                 className="point"
               >
@@ -117,6 +117,28 @@ const Services = () => {
               </div>
             </div>
           </motion.div>
+        )}
+        {!isVisible2 && (
+          <div className="app_services_schema_services">
+            <div className="line"></div>
+            <div className="all_point">
+              <div className="point">
+                <div className="point_texte_conception">Conception</div>
+              </div>
+              <motion.div
+                animate={{ scale: [50, 1] }}
+                transition={{
+                  scale: { duration: 3 },
+                }}
+                className="point"
+              >
+                <div className="point_texte_realisation">Réalisation</div>
+              </motion.div>
+              <div className="point">
+                <div className="point_texte_automatisation">Automatisation</div>
+              </div>
+            </div>
+          </div>
         )}
 
         <article className="app_services_two_texte center">

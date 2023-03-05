@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
@@ -8,6 +8,34 @@ import "./NavBar.scss";
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   const menu = ["Selimovic", "Portfolio", "Services", "Contacts"];
+  const [scrollTop, setScrollTop] = useState(0);
+  const [scrollSelectNav, setScrollSelectNav] = useState("Selimovic");
+
+  function calcScrollPos() {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrolled = (winScroll * 100) / height;
+
+    setScrollTop(scrolled);
+
+    //console.log("pos => ", scrollTop);
+  }
+
+  function navBarSelect() {
+    if (scrollTop >= 0 && scrollTop < 35) {
+      setScrollSelectNav("Selimovic");
+    } else if (scrollTop >= 35 && scrollTop < 62) {
+      setScrollSelectNav("Portfolio");
+    } else if (scrollTop >= 62) {
+      setScrollSelectNav("Services");
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    calcScrollPos();
+    navBarSelect();
+  });
 
   return (
     <nav className="app__navbar">
@@ -16,13 +44,21 @@ const NavBar = () => {
           <img className="logo-dimension" src={images.logoTete} alt="logo" />
         </a>
         <ul className="app__navbar-links">
-          {menu.map((item, index) => (
-            <li key={`link-${item}`}>
-              <a href={`#${item}`} aria-label="Redirect menu">
-                {item}
-              </a>
-            </li>
-          ))}
+          {menu.map((item, index) =>
+            item == scrollSelectNav ? (
+              <li style={{ backgroundColor: `black` }} key={`link-${item}`}>
+                <a style={{ color: `white` }} href={`#${item}`} aria-label="Redirect menu">
+                  {item}
+                </a>
+              </li>
+            ) : (
+              <li key={`link-${item}`}>
+                <a href={`#${item}`} aria-label="Redirect menu">
+                  {item}
+                </a>
+              </li>
+            )
+          )}
         </ul>
       </div>
 

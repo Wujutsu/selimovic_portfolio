@@ -1,12 +1,31 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { images } from "../../constants";
 
 import "./Portfolio.scss";
 
 const Portfolio = () => {
+  const [ref1, isVisible1] = useInView({ threshold: 0.7 });
+  const variantsVisibility = {
+    visible: {
+      opacity: 1,
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <div className="app_portfolio app-block" id="Portfolio">
+    <motion.div
+      ref={ref1}
+      variants={variantsVisibility}
+      animate={isVisible1 ? "visible" : "hidden"}
+      transition={{ duration: 0.5, ease: "linear" }}
+      className="app_portfolio app-block"
+      id="Portfolio"
+    >
       <div className="app_portfolio_block">
         <div className="app_portfolio_img">
           <img src={images.cadreGoogle} alt="cadre google" />
@@ -20,7 +39,7 @@ const Portfolio = () => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

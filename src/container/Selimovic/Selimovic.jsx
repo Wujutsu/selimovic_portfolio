@@ -97,10 +97,24 @@ const Selimovic = () => {
             disposition pour échanger avec vous sur une potentielle future collaboration.
           </p>
         </article>
-
-        <div className="app_selimovic_quisuisje_img">
-          <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
-        </div>
+        {isVisible2 && (
+          <motion.div
+            whileInView={{ x: [300, 0], y: [-100, 0], scale: [3, 1] }}
+            transition={{ duration: 1 }}
+            className="app_selimovic_quisuisje_img"
+          >
+            <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
+          </motion.div>
+        )}
+        {!isVisible2 && (
+          <motion.div
+            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 3] }}
+            transition={{ duration: 1 }}
+            className="app_selimovic_quisuisje_img"
+          >
+            <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );

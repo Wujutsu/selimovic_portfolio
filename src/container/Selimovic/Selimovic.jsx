@@ -1,25 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { images } from "../../constants";
 
 import "./Selimovic.scss";
 
 const Selimovic = () => {
   const [widthWindows, setWidthWindows] = useState(0);
+  const [ref1, isVisible1] = useInView({ threshold: 0.7 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.7 });
+  const variantsVisibility = {
+    visible: {
+      opacity: 1,
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
 
-  useEffect(() => {
-    onResize();
-  }, []);
-
-  function onResize() {
+  function calcWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
   }
 
-  window.addEventListener("resize", onResize);
+  useEffect(() => {
+    calcWidthWindows();
+  }, []);
+
+  window.addEventListener("resize", () => {
+    calcWidthWindows();
+  });
 
   return (
     <div id="Selimovic">
-      <div className="app_selimovic_presentation app-block">
+      <motion.div
+        ref={ref1}
+        variants={variantsVisibility}
+        animate={isVisible1 ? "visible" : "hidden"}
+        transition={{ duration: 0.5, ease: "linear" }}
+        className="app_selimovic_presentation app-block "
+      >
         <article>
           <div className="head-text">
             Hello, moi c'est <span>Selimovic</span>
@@ -47,9 +66,15 @@ const Selimovic = () => {
             service personnalisé.
           </p>
         </article>
-      </div>
+      </motion.div>
 
-      <div className="app_selimovic_quisuisje app-block">
+      <motion.div
+        ref={ref2}
+        variants={variantsVisibility}
+        animate={isVisible2 ? "visible" : "hidden"}
+        transition={{ duration: 0.5, ease: "linear" }}
+        className="app_selimovic_quisuisje app-block"
+      >
         <article>
           <div className="head-text">Qui suis-je ?</div>
           <p>
@@ -72,10 +97,11 @@ const Selimovic = () => {
             disposition pour échanger avec vous sur une potentielle future collaboration.
           </p>
         </article>
+
         <div className="app_selimovic_quisuisje_img">
           <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import "./Selimovic.scss";
 
 const Selimovic = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: 0.7 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.7 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.6 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -99,8 +99,8 @@ const Selimovic = () => {
         </article>
         {isVisible2 && (
           <motion.div
-            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.5, 1] }}
-            transition={{ duration: 1 }}
+            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.8, 1] }}
+            transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >
             <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
@@ -108,8 +108,8 @@ const Selimovic = () => {
         )}
         {!isVisible2 && (
           <motion.div
-            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.5] }}
-            transition={{ duration: 1 }}
+            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.8] }}
+            transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >
             <img src={images.logoTete} alt="Le moustatchu, c'est moi" />

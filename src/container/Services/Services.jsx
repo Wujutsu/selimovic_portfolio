@@ -6,8 +6,8 @@ import { images } from "../../constants";
 import "./Services.scss";
 
 const Services = () => {
-  const [ref1, isVisible1] = useInView({ threshold: 0.7 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.3 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.5 });
   const variantsVisibility = {
     visible: {
       opacity: 1,

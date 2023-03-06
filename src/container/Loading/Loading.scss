@@ -77,7 +77,7 @@
     .app_loading_prepare_navbar {
       position: absolute;
       top: calc(var(--size-logo) * -1);
-      left: 1rem;
+      left: 2rem;
 
       @media screen and (min-width: 1800px) {
         left: 22rem;

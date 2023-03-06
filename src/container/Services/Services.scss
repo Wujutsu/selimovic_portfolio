@@ -1,5 +1,7 @@
 .app_services {
   .app_services_one {
+    padding-bottom: 5rem;
+
     article {
       .app_services_block {
         display: flex;
@@ -28,6 +30,7 @@
   }
 
   .app_services_two {
+    padding-top: 7rem;
     padding-bottom: 8rem;
     .app_services_schema_services {
       padding-left: 10%;

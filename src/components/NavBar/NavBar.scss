@@ -7,6 +7,22 @@
     top: 0px;
     left: 1rem;
 
+    @media screen and (min-width: 1800px) {
+      left: 22rem;
+    }
+
+    @media screen and (min-width: 2300px) {
+      left: 32rem;
+    }
+
+    @media screen and (min-width: 2600px) {
+      left: 42rem;
+    }
+
+    @media screen and (min-width: 2900px) {
+      left: 52rem;
+    }
+
     img {
       position: relative;
       z-index: 11;

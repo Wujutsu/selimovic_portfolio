@@ -79,6 +79,22 @@
       top: calc(var(--size-logo) * -1);
       left: 1rem;
 
+      @media screen and (min-width: 1800px) {
+        left: 22rem;
+      }
+
+      @media screen and (min-width: 2300px) {
+        left: 32rem;
+      }
+
+      @media screen and (min-width: 2600px) {
+        left: 42rem;
+      }
+
+      @media screen and (min-width: 2900px) {
+        left: 52rem;
+      }
+
       .app_loading_logo_rotation {
         opacity: var(--opacity);
         animation: hideBlock step-end var(--selimovic-duration-total-anim),

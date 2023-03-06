@@ -10,31 +10,31 @@
 .app-block {
   overflow: hidden;
   padding: 4rem;
-  padding-top: 11rem;
+  padding-top: 12rem;
   padding-bottom: 0rem;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   @media screen and (min-width: 1800px) {
     padding: 25rem;
-    padding-top: 11rem;
+    padding-top: 12rem;
     padding-bottom: 0rem;
   }
 
   @media screen and (min-width: 2300px) {
     padding: 35rem;
-    padding-top: 11rem;
+    padding-top: 12rem;
     padding-bottom: 0rem;
   }
 
   @media screen and (min-width: 2600px) {
     padding: 45rem;
-    padding-top: 11rem;
+    padding-top: 12rem;
     padding-bottom: 0rem;
   }
 
   @media screen and (min-width: 2900px) {
     padding: 55rem;
-    padding-top: 11rem;
+    padding-top: 12rem;
     padding-bottom: 0rem;
   }
 }

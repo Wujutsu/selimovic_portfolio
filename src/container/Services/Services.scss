@@ -26,6 +26,17 @@
           width: 100%;
           padding-right: 50px;
         }
+
+        @media screen and (max-width: 600px) {
+          .app_services_block_point {
+            display: none;
+          }
+          .head-text,
+          p {
+            width: 100%;
+            padding-right: 0px;
+          }
+        }
       }
     }
   }
@@ -62,7 +73,7 @@
           .point_texte_conception {
             position: absolute;
             top: -50px;
-            left: -65px;
+            left: -72px;
           }
 
           .point_texte_realisation {
@@ -74,7 +85,29 @@
           .point_texte_automatisation {
             position: absolute;
             top: -50px;
-            left: -100px;
+            left: -112px;
+          }
+
+          @media screen and (max-width: 600px) {
+            font-size: 0.9rem;
+
+            .point_texte_conception {
+              position: absolute;
+              top: -30px;
+              left: -35px;
+            }
+
+            .point_texte_realisation {
+              position: absolute;
+              top: 55px;
+              left: -35px;
+            }
+
+            .point_texte_automatisation {
+              position: absolute;
+              top: -30px;
+              left: -60px;
+            }
           }
         }
       }

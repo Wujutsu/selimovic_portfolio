@@ -73,7 +73,15 @@ const NavBar = () => {
       </div>
 
       <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <a href="#Selimovic" onClick={() => setToggle(true)} aria-label="Redirect Accueil">
+          <motion.img
+            animate={{ scale: [1, 1.5, 1] }}
+            transition={{ duration: 2, delay: 4.5, ease: "linear" }}
+            className="logo-dimension"
+            src={images.logoTete}
+            alt="logo"
+          />
+        </a>
 
         {toggle && (
           <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0, ease: "easeOut" }}>
@@ -81,7 +89,12 @@ const NavBar = () => {
             <ul>
               {menu.map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)} aria-label="Redirect menu">
+                  <a
+                    href={`#${item}`}
+                    onClick={() => setToggle(false)}
+                    className="head-text"
+                    aria-label="Redirect menu"
+                  >
                     {item}
                   </a>
                 </li>

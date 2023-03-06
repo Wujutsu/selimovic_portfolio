@@ -7,8 +7,9 @@ import "./Selimovic.scss";
 
 const Selimovic = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.6 });
+  const [valThreshold, setValThreshold] = useState(0);
+  const [ref1, isVisible1] = useInView({ threshold: valThreshold });
+  const [ref2, isVisible2] = useInView({ threshold: valThreshold });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -18,16 +19,17 @@ const Selimovic = () => {
     },
   };
 
-  function calcWidthWindows() {
+  function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
+    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0);
   }
 
   useEffect(() => {
-    calcWidthWindows();
+    updateSizeWidthWindows();
   }, []);
 
   window.addEventListener("resize", () => {
-    calcWidthWindows();
+    updateSizeWidthWindows();
   });
 
   return (
@@ -93,8 +95,8 @@ const Selimovic = () => {
           </p>
 
           <p>
-            Ayant déja eu la chance de travailler pour pour des clients aux besoins variés, je me tiens à votre
-            disposition pour échanger avec vous sur une potentielle future collaboration.
+            Ayant déja eu la chance de travailler pour des clients aux besoins variés, je me tiens à votre disposition
+            pour échanger avec vous sur une potentielle future collaboration.
           </p>
         </article>
         {isVisible2 && (

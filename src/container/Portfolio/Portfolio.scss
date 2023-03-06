@@ -4,7 +4,6 @@
 
     .app_portfolio_img {
       display: flex;
-      justify-content: center;
       align-items: center;
       flex-direction: column;
 
@@ -16,7 +15,7 @@
     .app_portfolio_texte {
       font-size: 1.5rem;
       position: absolute;
-      left: 0;
+      left: 0px;
       right: 280px;
       top: 244px;
       text-align: center;
@@ -29,8 +28,11 @@
       top: 300px;
       text-align: center;
       button {
-        width: 165px;
-        padding: 5px;
+        padding: 10px;
+        background: white;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        width: 200px;
         border-radius: 20px;
         cursor: pointer;
       }
@@ -44,52 +46,56 @@
       }
       .app_portfolio_texte {
         font-size: 1.2rem;
-        left: -210px;
-        top: 191px;
+        left: 70px;
+        top: 190px;
       }
       .app_portfolio_btn {
-        top: 240px;
-        button {
-          width: 130px;
-        }
+        top: 230px;
       }
     }
 
     @media screen and (max-width: 800px) {
       .app_portfolio_img {
         img {
-          height: 250px;
+          height: 280px;
+          margin-left: -15px;
         }
       }
       .app_portfolio_texte {
-        font-size: 1rem;
-        left: -130px;
-        top: 134px;
+        font-size: 1.1rem;
+        left: 110px;
+        top: 150px;
       }
       .app_portfolio_btn {
-        top: 170px;
-        button {
-          width: 120px;
-        }
+        top: 185px;
       }
     }
 
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 660px) {
       .app_portfolio_img {
         img {
-          height: 180px;
+          width: 500px;
+          height: 100%;
+          margin-left: 5px;
         }
       }
       .app_portfolio_texte {
-        font-size: 0.7rem;
-        left: -96px;
-        top: 98px;
+        left: 85px;
+        top: 133px;
+        margin: auto;
+        width: 220px;
       }
       .app_portfolio_btn {
-        top: 125px;
-        button {
-          width: 120px;
-        }
+        top: 170px;
+      }
+    }
+
+    @media screen and (max-width: 440px) {
+      .app_portfolio_texte {
+        left: 5px;
+        top: 133px;
+        margin: auto;
+        width: 220px;
       }
     }
   }

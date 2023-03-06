@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { images } from "../../constants";
@@ -6,8 +6,11 @@ import { images } from "../../constants";
 import "./Services.scss";
 
 const Services = () => {
-  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.3 });
+  const [widthWindows, setWidthWindows] = useState(0);
+  const [valThreshold1, setValThreshold1] = useState(0);
+  const [valThreshold2, setValThreshold2] = useState(0);
+  const [ref1, isVisible1] = useInView({ threshold: valThreshold1 });
+  const [ref2, isVisible2] = useInView({ threshold: valThreshold2 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -16,6 +19,20 @@ const Services = () => {
       opacity: 0,
     },
   };
+
+  function updateSizeWidthWindows() {
+    setWidthWindows(document.documentElement.clientWidth + 17);
+    widthWindows > 600 ? setValThreshold1(0.6) : setValThreshold1(0);
+    widthWindows > 600 ? setValThreshold2(0.3) : setValThreshold2(0.3);
+  }
+
+  useEffect(() => {
+    updateSizeWidthWindows();
+  }, []);
+
+  window.addEventListener("resize", () => {
+    updateSizeWidthWindows();
+  });
 
   return (
     <div className="app_services">
@@ -104,7 +121,7 @@ const Services = () => {
                 <div className="point_texte_conception">Conception</div>
               </div>
               <motion.div
-                animate={{ y: [0, 150], scale: [1, 38] }}
+                animate={{ y: [0, 150], scale: [1, 50] }}
                 transition={{
                   y: { duration: 1, delay: 1 },
                   scale: { duration: 1, delay: 2 },
@@ -126,7 +143,7 @@ const Services = () => {
               <div className="point">
                 <div className="point_texte_conception">Conception</div>
               </div>
-              <motion.div animate={{ y: [150, 0], scale: [38, 1] }} transition={{ duration: 5 }} className="point">
+              <motion.div animate={{ y: [150, 0], scale: [50, 1] }} transition={{ duration: 5 }} className="point">
                 <div className="point_texte_realisation">Réalisation</div>
               </motion.div>
               <div className="point">

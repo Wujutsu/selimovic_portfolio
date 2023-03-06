@@ -21,7 +21,7 @@ const Selimovic = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0);
+    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0.5);
   }
 
   useEffect(() => {

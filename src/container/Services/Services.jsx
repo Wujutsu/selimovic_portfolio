@@ -22,7 +22,7 @@ const Services = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold1(0.6) : setValThreshold1(0);
+    widthWindows > 600 ? setValThreshold1(0.6) : setValThreshold1(0.5);
     widthWindows > 600 ? setValThreshold2(0.3) : setValThreshold2(0.3);
   }
 

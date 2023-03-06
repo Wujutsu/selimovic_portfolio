@@ -36,6 +36,7 @@
       background: var(--white-color);
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
+      width: 750px;
 
       display: flex;
       justify-content: center;
@@ -78,7 +79,7 @@
     }
 
     @media screen and (max-width: 900px) {
-      display: none;
+      visibility: hidden;
     }
   }
 

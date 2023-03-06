@@ -41,9 +41,19 @@ const NavBar = () => {
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <a href="#Selimovic" aria-label="Redirect Accueil">
-          <img className="logo-dimension" src={images.logoTete} alt="logo" />
+          <motion.img
+            animate={{ scale: [1, 1.5, 1] }}
+            transition={{ duration: 2, delay: 4.5, ease: "linear" }}
+            className="logo-dimension"
+            src={images.logoTete}
+            alt="logo"
+          />
         </a>
-        <ul className="app__navbar-links">
+        <motion.ul
+          whileInView={{ width: [0, 750] }}
+          transition={{ duration: 2, delay: 4.5 }}
+          className="app__navbar-links"
+        >
           {menu.map((item, index) =>
             item == scrollSelectNav ? (
               <li style={{ backgroundColor: `black` }} key={`link-${item}`}>
@@ -59,7 +69,7 @@ const NavBar = () => {
               </li>
             )
           )}
-        </ul>
+        </motion.ul>
       </div>
 
       <div className="app__navbar-menu">

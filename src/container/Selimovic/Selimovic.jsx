@@ -99,16 +99,21 @@ const Selimovic = () => {
         </article>
         {isVisible2 && (
           <motion.div
-            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.8, 1] }}
+            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.8, 1], opacity: [0, 1] }}
             transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >
-            <img src={images.logoTete} alt="Le moustatchu, c'est moi" />
+            <motion.img
+              animate={{ rotate: [0, -10, 0, 10, 0, -10, 0] }}
+              transition={{ duration: 1.5, ease: "linear", delay: 0.8 }}
+              src={images.logoTete}
+              alt="Le moustatchu, c'est moi"
+            />
           </motion.div>
         )}
         {!isVisible2 && (
           <motion.div
-            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.8] }}
+            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.8], opacity: [1, 0] }}
             transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >

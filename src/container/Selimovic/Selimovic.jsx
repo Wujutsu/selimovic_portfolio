@@ -21,7 +21,7 @@ const Selimovic = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0.4);
+    widthWindows > 600 ? setValThreshold(0.7) : setValThreshold(0.4);
   }
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Selimovic = () => {
         ref={ref1}
         variants={variantsVisibility}
         animate={isVisible1 ? "visible" : "hidden"}
-        transition={{ duration: 1, ease: "linear" }}
+        transition={{ duration: 0.5, ease: "linear" }}
         className="app_selimovic_presentation app-block "
       >
         <article>
@@ -74,7 +74,7 @@ const Selimovic = () => {
         ref={ref2}
         variants={variantsVisibility}
         animate={isVisible2 ? "visible" : "hidden"}
-        transition={{ duration: 1, ease: "linear" }}
+        transition={{ duration: 0.5, ease: "linear" }}
         className="app_selimovic_quisuisje app-block"
       >
         <article>

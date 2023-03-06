@@ -22,8 +22,8 @@ const Services = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold1(0.6) : setValThreshold1(0.5);
-    widthWindows > 600 ? setValThreshold2(0.3) : setValThreshold2(0.3);
+    widthWindows > 600 ? setValThreshold1(0.5) : setValThreshold1(0.4);
+    widthWindows > 600 ? setValThreshold2(0.4) : setValThreshold2(0.3);
   }
 
   useEffect(() => {
@@ -112,7 +112,7 @@ const Services = () => {
         {isVisible2 && (
           <motion.div
             whileInView={{ y: [-100, 0] }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
             className="app_services_schema_services"
           >
             <div className="line"></div>
@@ -121,7 +121,7 @@ const Services = () => {
                 <div className="point_texte_conception">Conception</div>
               </div>
               <motion.div
-                animate={{ y: [0, 200], scale: [1, 50] }}
+                animate={{ y: [0, 250], scale: [1, 50] }}
                 transition={{
                   y: { duration: 1, delay: 0.5 },
                   scale: { duration: 1, delay: 1 },
@@ -143,7 +143,7 @@ const Services = () => {
               <div className="point">
                 <div className="point_texte_conception">Conception</div>
               </div>
-              <motion.div animate={{ y: [150, 0], scale: [50, 1] }} transition={{ duration: 5 }} className="point">
+              <motion.div animate={{ y: [200, 0], scale: [50, 1] }} transition={{ duration: 5 }} className="point">
                 <div className="point_texte_realisation">Réalisation</div>
               </motion.div>
               <div className="point">

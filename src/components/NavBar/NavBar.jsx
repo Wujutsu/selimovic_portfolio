@@ -25,10 +25,12 @@ const NavBar = () => {
   function navBarSelect() {
     if (scrollTop >= 0 && scrollTop < 35) {
       setScrollSelectNav("Selimovic");
-    } else if (scrollTop >= 35 && scrollTop < 62) {
+    } else if (scrollTop >= 35 && scrollTop < 55) {
       setScrollSelectNav("Portfolio");
-    } else if (scrollTop >= 62) {
+    } else if (scrollTop >= 55 && scrollTop < 95) {
       setScrollSelectNav("Services");
+    } else {
+      setScrollSelectNav("Contacts");
     }
   }
 

@@ -1,5 +1,5 @@
 import { Loading, Selimovic, Portfolio, Services, Contact } from "./container";
-import NavBar from "./components/NavBar/NavBar";
+import { NavBar, Footer } from "./components";
 import "./App.scss";
 
 function App() {

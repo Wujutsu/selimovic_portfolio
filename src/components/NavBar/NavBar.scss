@@ -36,14 +36,12 @@
       background: var(--white-color);
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
-      width: 750px;
 
       display: flex;
       justify-content: center;
       align-items: center;
 
       li {
-        cursor: pointer;
         flex-direction: column;
         list-style-type: none;
         padding: 14px 11px;
@@ -61,6 +59,7 @@
         a {
           padding-top: 13px;
           padding-bottom: 16px;
+          padding-right: 5px;
           color: var(--black-color);
           font-family: folsom-black;
           font-size: 1.6rem;

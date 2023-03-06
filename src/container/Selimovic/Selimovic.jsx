@@ -8,7 +8,7 @@ import "./Selimovic.scss";
 const Selimovic = () => {
   const [widthWindows, setWidthWindows] = useState(0);
   const [ref1, isVisible1] = useInView({ threshold: 0.6 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.6 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.5 });
   const variantsVisibility = {
     visible: {
       opacity: 1,

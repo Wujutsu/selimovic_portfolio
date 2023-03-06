@@ -121,10 +121,10 @@ const Services = () => {
                 <div className="point_texte_conception">Conception</div>
               </div>
               <motion.div
-                animate={{ y: [0, 150], scale: [1, 50] }}
+                animate={{ y: [0, 200], scale: [1, 50] }}
                 transition={{
-                  y: { duration: 1, delay: 1 },
-                  scale: { duration: 1, delay: 2 },
+                  y: { duration: 1, delay: 0.5 },
+                  scale: { duration: 1, delay: 1 },
                 }}
                 className="point"
               >

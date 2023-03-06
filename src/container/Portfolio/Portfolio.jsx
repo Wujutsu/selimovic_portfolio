@@ -21,7 +21,7 @@ const Portfolio = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold(0.4) : setValThreshold(0.6);
+    widthWindows > 600 ? setValThreshold(0.4) : setValThreshold(0);
   }
 
   useEffect(() => {

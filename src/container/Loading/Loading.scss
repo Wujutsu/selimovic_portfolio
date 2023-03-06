@@ -102,33 +102,28 @@
             var(--selimovic-duration-first-anim) 1,
           loadingLogoGravityNavBar var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
       }
+    }
 
-      @media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
+      .app_loading_logo1,
+      .app_loading_logo2,
+      .app_loading_logo3 {
+        visibility: hidden;
       }
-    }
-  }
 
-  .app_loading_end_smartphone {
-    .app_loading_logo_rotation {
-      opacity: var(--opacity);
-      animation: hideBlock step-end var(--selimovic-duration-total-anim),
-        loadingLogoRotation var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
-        loadingLogoGravitySecond var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
-    }
+      .app_loading_prepare_navbar {
+        position: absolute;
+        top: calc(var(--size-logo) * -1);
+        left: auto;
+        right: 0rem;
 
-    .app_loading_prepare_navbar {
-      position: absolute;
-      top: calc(var(--size-logo) * -1);
-      right: 0;
+        .app_loading_logo_rotation {
+          width: 6rem;
 
-      .app_loading_logo_rotation {
-        width: 6rem;
-
-        opacity: var(--opacity);
-        animation: hideBlock step-end var(--selimovic-duration-total-anim),
-          loadingLogoRotationNavBar calc(var(--selimovic-duration-second-anim) - 0.2s) linear
-            var(--selimovic-duration-first-anim) 1,
-          loadingLogoGravityNavBar var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
+          opacity: var(--opacity);
+          animation: hideBlock step-end var(--selimovic-duration-total-anim),
+            loadingLogoGravityNavBar var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
+        }
       }
     }
   }

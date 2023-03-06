@@ -27,6 +27,11 @@
       right: 0;
       top: 300px;
       text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+
       button {
         padding: 10px;
         background: white;
@@ -92,7 +97,7 @@
 
     @media screen and (max-width: 440px) {
       .app_portfolio_texte {
-        left: 5px;
+        left: 15px;
         top: 133px;
         margin: auto;
         width: 220px;

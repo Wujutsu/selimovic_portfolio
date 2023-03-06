@@ -8,8 +8,7 @@ import "./Portfolio.scss";
 
 const Portfolio = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [valThreshold, setValThreshold] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: valThreshold });
+  const [ref1, isVisible1] = useInView({ threshold: 0.5 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -21,7 +20,6 @@ const Portfolio = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold(0.5) : setValThreshold(0);
   }
 
   useEffect(() => {

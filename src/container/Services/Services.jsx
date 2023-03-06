@@ -7,10 +7,8 @@ import "./Services.scss";
 
 const Services = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [valThreshold1, setValThreshold1] = useState(0);
-  const [valThreshold2, setValThreshold2] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: valThreshold1 });
-  const [ref2, isVisible2] = useInView({ threshold: valThreshold2 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.5 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.2 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -22,8 +20,6 @@ const Services = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold1(0.5) : setValThreshold1(0.4);
-    widthWindows > 600 ? setValThreshold2(0.4) : setValThreshold2(0.3);
   }
 
   useEffect(() => {

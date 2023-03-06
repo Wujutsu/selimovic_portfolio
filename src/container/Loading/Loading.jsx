@@ -4,20 +4,6 @@ import { images } from "../../constants";
 import "./Loading.scss";
 
 const Loading = () => {
-  const [widthWindows, setWidthWindows] = useState(0);
-
-  function updateSizeWidthWindows() {
-    setWidthWindows(document.documentElement.clientWidth + 17);
-  }
-
-  useEffect(() => {
-    updateSizeWidthWindows();
-  }, []);
-
-  window.addEventListener("resize", () => {
-    updateSizeWidthWindows();
-  });
-
   return (
     <div className="app_loading">
       <div className="app_loading_start">

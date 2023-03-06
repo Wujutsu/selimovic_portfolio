@@ -21,7 +21,7 @@ const Selimovic = () => {
 
   function updateSizeWidthWindows() {
     setWidthWindows(document.documentElement.clientWidth + 17);
-    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0.5);
+    widthWindows > 600 ? setValThreshold(0.6) : setValThreshold(0.4);
   }
 
   useEffect(() => {
@@ -80,8 +80,8 @@ const Selimovic = () => {
         <article>
           <div className="head-text">Qui suis-je ?</div>
           <p>
-            Le moustachu {widthWindows > 1000 ? `à ta droite` : `en bas`}, c’est moi ! Passionné par le design depuis
-            mon adolescence, je réalise des identités visuelles depuis très longtemps.
+            Le moustachu {widthWindows > 1000 ? `à ta droite` : ``}, c’est moi ! Passionné par le design depuis mon
+            adolescence, je réalise des identités visuelles depuis très longtemps.
           </p>
 
           <p>

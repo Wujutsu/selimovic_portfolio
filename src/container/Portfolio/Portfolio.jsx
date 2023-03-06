@@ -7,7 +7,7 @@ import { images } from "../../constants";
 import "./Portfolio.scss";
 
 const Portfolio = () => {
-  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.4 });
   const variantsVisibility = {
     visible: {
       opacity: 1,

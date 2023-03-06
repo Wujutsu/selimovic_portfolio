@@ -7,7 +7,7 @@ import "./Services.scss";
 
 const Services = () => {
   const [ref1, isVisible1] = useInView({ threshold: 0.6 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.5 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.3 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -48,7 +48,7 @@ const Services = () => {
           </div>
         </article>
 
-        <motion.article whileInView={{ y: [100, 0] }} transition={{ duration: 1 }} className="jump">
+        <motion.article whileInView={{ y: [50, 0] }} transition={{ duration: 1 }} className="jump">
           <div className="app_services_block ">
             <div className="app_services_block_point hideElement">
               <div className="app_services_show_point"></div>
@@ -66,7 +66,7 @@ const Services = () => {
           </div>
         </motion.article>
 
-        <motion.article whileInView={{ y: [100, 0] }} transition={{ duration: 1 }} className="jump">
+        <motion.article whileInView={{ y: [50, 0] }} transition={{ duration: 1 }} className="jump">
           <div className="app_services_block ">
             <div className="app_services_block_point hideElement">
               <div className="app_services_show_point"></div>
@@ -104,8 +104,9 @@ const Services = () => {
                 <div className="point_texte_conception">Conception</div>
               </div>
               <motion.div
-                animate={{ scale: [1, 50] }}
+                animate={{ y: [0, 200], scale: [1, 38] }}
                 transition={{
+                  y: { duration: 1, delay: 1 },
                   scale: { duration: 2, delay: 1 },
                 }}
                 className="point"
@@ -128,7 +129,7 @@ const Services = () => {
               <motion.div
                 animate={{ scale: [50, 1] }}
                 transition={{
-                  scale: { duration: 3 },
+                  scale: { duration: 4 },
                 }}
                 className="point"
               >
@@ -142,8 +143,10 @@ const Services = () => {
         )}
 
         <article className="app_services_two_texte center">
-          <p>De la prise de contact à la réalisation finale, 5 étapes importantes pour répondre à vos besoins :</p>
-          <p className="bold">
+          <p className="head-text">
+            De la prise de contact à la réalisation finale, 5 étapes importantes pour répondre à vos besoins :
+          </p>
+          <p className="bold jump">
             1. Échange par téléphone ou par mail fin de discuter du projet dans la globalité (budget, brief, deadline…).
           </p>
           <p className="bold">

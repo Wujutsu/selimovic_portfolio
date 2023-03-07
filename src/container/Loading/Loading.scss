@@ -68,6 +68,8 @@
     .app_loading_logo2 {
       left: calc(50% - (var(--size-logo) / 2));
       top: calc((var(--size-logo) * -1) - 5rem);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
     }
 
     .app_loading_logo3 {
@@ -105,10 +107,19 @@
     }
 
     @media screen and (max-width: 600px) {
+      .app_loading_logo_rotation {
+        opacity: var(--opacity);
+        animation: hideBlock step-end var(--selimovic-duration-total-anim),
+          loadingLogoRotationPhone var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim),
+          loadingLogoGravitySecond var(--selimovic-duration-second-anim) linear var(--selimovic-duration-first-anim);
+      }
+
       .app_loading_logo1,
       .app_loading_logo2,
       .app_loading_logo3 {
-        visibility: hidden;
+        .logo-dimension {
+          width: 6rem;
+        }
       }
 
       .app_loading_prepare_navbar {
@@ -166,6 +177,15 @@
   }
   to {
     transform: rotate(500deg);
+  }
+}
+
+/* Permet de faire rotate le logo en format mobile */
+@keyframes loadingLogoRotationPhone {
+  from {
+  }
+  to {
+    transform: rotate(2000deg);
   }
 }
 

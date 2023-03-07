@@ -14,13 +14,13 @@ const Loading = () => {
       </div>
       <div className="app_loading_end">
         <div className="app_loading_logo1">
-          <img className="logo-dimension app_loading_logo_rotation" src={images.logoTete} alt="logo" />
+          <img className="logo-dimension app_loading_logo_rotation" src={images.logoTeteRotation1} alt="logo" />
         </div>
         <div className="app_loading_logo2">
           <img className="logo-dimension app_loading_logo_rotation" src={images.logoTete} alt="logo" />
         </div>
         <div className="app_loading_logo3">
-          <img className="logo-dimension app_loading_logo_rotation" src={images.logoTete} alt="logo" />
+          <img className="logo-dimension app_loading_logo_rotation" src={images.logoTeteRotation2} alt="logo" />
         </div>
         <div className="app_loading_prepare_navbar">
           <img className="logo-dimension app_loading_logo_rotation" src={images.logoTete} alt="logo" />

@@ -14,24 +14,17 @@ const Contact = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    emailjs
-      .sendForm(
-        "service_3evdvn9",
-        "template_neojb8h",
-        form.current,
-        "ewmzmkvPafKkCbUVH"
-      )
-      .then(
-        (result) => {
-          setLoading(false);
-          setEtatMail(true);
-        },
-        (error) => {
-          setLoading(false);
-          setEtatMail(false);
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm("service_kzvpm3f", "template_6i3p6km", form.current, "uCKf9oEw1gkIEFiLc").then(
+      (result) => {
+        setLoading(false);
+        setEtatMail(true);
+      },
+      (error) => {
+        setLoading(false);
+        setEtatMail(false);
+        console.log(error.text);
+      }
+    );
 
     e.target.reset();
   }
@@ -45,40 +38,16 @@ const Contact = () => {
         <div className="app_contact_form">
           <form ref={form} onSubmit={sendEmail}>
             <div className="form_input">
-              <input
-                type="text"
-                placeholder="Prénom/Nom"
-                name="user_name"
-                autoComplete="off"
-                required
-              />
+              <input type="text" placeholder="Prénom/Nom" name="user_name" autoComplete="off" required />
             </div>
             <div className="form_input">
-              <input
-                type="email"
-                placeholder="Email"
-                name="user_email"
-                autoComplete="off"
-                required
-              />
+              <input type="email" placeholder="Email" name="user_email" autoComplete="off" required />
             </div>
             <div className="form_input">
-              <input
-                type="text"
-                placeholder="Object du message"
-                name="subject"
-                autoComplete="off"
-                required
-              />
+              <input type="text" placeholder="Object du message" name="subject" autoComplete="off" required />
             </div>
             <div className="form_input">
-              <textarea
-                name="message"
-                placeholder="Message"
-                rows="8"
-                autoComplete="off"
-                required
-              ></textarea>
+              <textarea name="message" placeholder="Message" rows="8" autoComplete="off" required></textarea>
             </div>
             {!loading && !etatMail && <button>Envoyer</button>}
             {loading && (

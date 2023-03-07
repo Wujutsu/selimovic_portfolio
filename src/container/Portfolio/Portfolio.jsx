@@ -47,7 +47,7 @@ const Portfolio = () => {
           <Typewriter options={{ autoStart: true, loop: true, delay: 100, strings: ["Portfolio selimovic"] }} />
         </div>
         <div className="app_portfolio_btn">
-          <a href="https://kevinduballet.fr" alt="redirection service" target="_blank">
+          <a href="https://www.behance.net/slimnidbouhou2/moodboards" alt="redirection behance" target="_blank">
             <button>Cliquez ici</button>
           </a>
         </div>

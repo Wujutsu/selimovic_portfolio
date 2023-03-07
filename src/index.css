@@ -1,10 +1,12 @@
 @font-face {
   font-family: "folsom-black";
   src: url("./assets/folsom/folsom-black-web.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "sfp-pro";
   src: url("./assets/sfppro/sfp-pro-regular.ttf");
+  font-display: swap;
 }
 
 :root {

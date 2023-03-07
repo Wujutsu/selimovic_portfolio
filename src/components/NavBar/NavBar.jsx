@@ -7,13 +7,15 @@ import "./NavBar.scss";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
-  const menu = ["Selimovic", "Portfolio", "Services", "Contacts"];
+  const menu = ["Selimovic", "Portfolio", "Services", "Contact"];
   const [scrollTop, setScrollTop] = useState(0);
   const [scrollSelectNav, setScrollSelectNav] = useState("Selimovic");
 
   function calcScrollPos() {
     const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
     const scrolled = (winScroll * 100) / height;
 
@@ -30,7 +32,7 @@ const NavBar = () => {
     } else if (scrollTop >= 55 && scrollTop < 95) {
       setScrollSelectNav("Services");
     } else {
-      setScrollSelectNav("Contacts");
+      setScrollSelectNav("Contact");
     }
   }
 
@@ -59,7 +61,11 @@ const NavBar = () => {
           {menu.map((item, index) =>
             item == scrollSelectNav ? (
               <li style={{ backgroundColor: `black` }} key={`link-${item}`}>
-                <a style={{ color: `white` }} href={`#${item}`} aria-label="Redirect menu">
+                <a
+                  style={{ color: `white` }}
+                  href={`#${item}`}
+                  aria-label="Redirect menu"
+                >
                   {item}
                 </a>
               </li>
@@ -75,7 +81,11 @@ const NavBar = () => {
       </div>
 
       <div className="app__navbar-menu">
-        <a href="#Selimovic" onClick={() => setToggle(true)} aria-label="Redirect Accueil">
+        <a
+          href="#Selimovic"
+          onClick={() => setToggle(true)}
+          aria-label="Redirect Accueil"
+        >
           <motion.img
             animate={{ scale: [1, 1.5, 1] }}
             transition={{ duration: 2, delay: 4.5, ease: "linear" }}
@@ -86,7 +96,10 @@ const NavBar = () => {
         </a>
 
         {toggle && (
-          <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0, ease: "easeOut" }}>
+          <motion.div
+            whileInView={{ x: [300, 0] }}
+            transition={{ duration: 0, ease: "easeOut" }}
+          >
             <HiX onClick={() => setToggle(false)} />
             <ul>
               {menu.map((item) => (

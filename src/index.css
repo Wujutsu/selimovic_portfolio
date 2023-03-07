@@ -1,5 +1,11 @@
-@font-face { font-family: "folsom-black"; 
-  src: url('./assets/folsom/folsom-black-web.ttf'); }
+@font-face {
+  font-family: "folsom-black";
+  src: url("./assets/folsom/folsom-black-web.ttf");
+}
+@font-face {
+  font-family: "sfp-pro";
+  src: url("./assets/sfppro/sfp-pro-regular.ttf");
+}
 
 :root {
   --font-base: sans-serif;
@@ -14,7 +20,6 @@
   --selimovic-duration-second-anim: 3s;
   --selimovic-duration-total-anim: 5s;
   --opacity: 0;
-
 }
 
 * {

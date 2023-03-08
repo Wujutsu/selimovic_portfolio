@@ -1,11 +1,11 @@
 .app_contact {
   .app_contact_block {
-    margin-top: -5rem;
     display: flex;
     justify-content: center;
 
     .app_contact_img {
-      width: 350px;
+      width: 490px;
+      margin-left: -3rem;
       margin-top: -4rem;
 
       img {
@@ -35,7 +35,7 @@
       button {
         cursor: pointer;
         background: white;
-        padding: 10px 20px;
+        padding: 10px 14px;
         font-family: folsom-black;
         font-size: 1.2rem;
         color: black;
@@ -45,12 +45,50 @@
         font-family: folsom-black;
         font-size: 2rem;
       }
+
+      .app_contact_reseaux {
+        margin-top: 2.5rem;
+        margin-left: -5px;
+        img {
+          margin-right: 0.5rem;
+          width: 60px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
     }
 
     @media screen and (max-width: 1000px) {
-      margin-top: 0rem;
       .app_contact_img {
-        width: 250px;
+        width: 400px;
+        margin-top: -3rem;
+
+        img {
+          width: 100%;
+        }
+      }
+      .app_contact_form {
+        width: 400px;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      .app_contact_img {
+        width: 300px;
+        margin-top: -3rem;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      .app_contact_img {
+        width: 200px;
         margin-top: -2rem;
 
         img {
@@ -59,8 +97,8 @@
       }
     }
 
-    @media screen and (max-width: 700px) {
-      margin-top: -2rem;
+    @media screen and (max-width: 650px) {
+      width: 100%;
 
       .app_contact_img {
         display: none;

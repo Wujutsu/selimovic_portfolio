@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
 import { images } from "../../constants";
 
@@ -7,7 +9,17 @@ import "./Contact.scss";
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [etatMail, setEtatMail] = useState(false);
+  const [ref1, isVisible1] = useInView({ threshold: 0.4 });
   const form = useRef();
+
+  const variantsVisibility = {
+    visible: {
+      opacity: 1,
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
 
   function sendEmail(e) {
     setLoading(true);
@@ -30,10 +42,17 @@ const Contact = () => {
   }
 
   return (
-    <div className="app_contact app-block" id="Contact">
+    <motion.div
+      ref={ref1}
+      variants={variantsVisibility}
+      animate={isVisible1 ? "visible" : "hidden"}
+      transition={{ duration: 0.5, ease: "linear" }}
+      className="app_contact app-block"
+      id="Contact"
+    >
       <div className="app_contact_block">
         <div className="app_contact_img">
-          <img src={images.logoTete} alt="logo" />
+          <motion.img whileHover={{ rotate: 10 }} src={images.logoTete} alt="logo" />
         </div>
         <div className="app_contact_form">
           <form ref={form} onSubmit={sendEmail}>
@@ -59,12 +78,25 @@ const Contact = () => {
               </div>
             )}
           </form>
-
           {etatMail && <div className="message_succes">Message envoyé !</div>}
+
+          <div className="app_contact_reseaux">
+            <a href="https://www.instagram.com/selimovicdesign/" aria-label="redirect insta" target="_blank">
+              <img src={images.logoInsta} alt="logo insta" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/s%C3%A9lim-nidbouhou-a1852821a/"
+              aria-label="redirect linkedin"
+              target="_blank"
+            >
+              <img src={images.logoLinkedin} alt="logo linkedin" />
+            </a>
+          </div>
         </div>
       </div>
+
       <div className="jump"></div>
-    </div>
+    </motion.div>
   );
 };
 

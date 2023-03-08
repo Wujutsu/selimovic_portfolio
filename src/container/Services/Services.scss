@@ -1,56 +1,29 @@
 .app_services {
   .app_services_one {
     padding-bottom: 5rem;
+    flex-direction: column;
 
     article {
       .app_services_block {
         display: flex;
 
-        .app_services_block_point {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100px;
-
-          .app_services_show_point {
-            width: 25px;
-            height: 25px;
-            margin-top: 7px;
-            background: white;
-            border-radius: 50px;
-          }
-        }
-
         .head-text,
         p {
           width: 100%;
-          padding-right: 50px;
-        }
-
-        @media screen and (max-width: 600px) {
-          .app_services_block_point {
-            display: none;
-          }
-          .head-text,
-          p {
-            width: 100%;
-            padding-right: 0px;
-          }
         }
       }
     }
   }
 
   .app_services_two {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+    flex-direction: column;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+
     .app_services_schema_services {
-      padding-left: 10%;
-      padding-right: 10%;
-      margin: auto;
+      width: 80%;
 
       .line {
-        width: 100%;
         height: 5px;
         background-color: white;
       }
@@ -58,7 +31,7 @@
       .all_point {
         display: flex;
         justify-content: space-between;
-        margin-top: -24px;
+        margin-top: -23px;
 
         .point {
           position: relative;
@@ -79,13 +52,13 @@
           .point_texte_realisation {
             position: absolute;
             top: 60px;
-            left: -65px;
+            left: -66px;
           }
 
           .point_texte_automatisation {
             position: absolute;
             top: -50px;
-            left: -112px;
+            left: -110px;
           }
 
           @media screen and (max-width: 600px) {
@@ -114,10 +87,50 @@
     }
 
     .app_services_two_texte {
-      position: relative;
       color: black;
       z-index: 5;
-      padding-top: 50px;
+      padding-bottom: 10vh;
+      text-align: left;
+
+      p {
+        span {
+          font-family: folsom-black;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      p:nth-child(2) {
+        margin-left: 2rem;
+      }
+
+      p:nth-child(3) {
+        margin-left: 4rem;
+      }
+
+      p:nth-child(4) {
+        margin-left: 6rem;
+      }
+
+      p:nth-child(5) {
+        margin-left: 8rem;
+      }
+
+      p:nth-child(6) {
+        margin-left: 10rem;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .app_services_two_texte {
+        p:nth-child(n + 2) {
+          margin-left: 0rem;
+        }
+      }
     }
   }
+}
+
+.scale {
+  transform: scale(50);
 }

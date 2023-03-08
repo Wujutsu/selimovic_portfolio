@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: -50px;
     height: 100%;
 
     .app_loading_logo_rotation {
@@ -26,7 +27,7 @@
       background: var(--black-color);
       border: 2px solid var(--white-color);
       border-radius: 20px;
-      width: 250px;
+      width: 125px;
       height: 24px;
       opacity: var(--opacity);
 
@@ -34,7 +35,7 @@
 
       .app_loading_bar_progress {
         border-radius: 20px;
-        height: 18px;
+        height: 19px;
         max-width: calc(100% - 8px);
         margin-left: 1.5%;
         margin-top: 3px;

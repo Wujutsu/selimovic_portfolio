@@ -10,51 +10,20 @@
 
 .app-block {
   overflow: hidden;
-  padding: 5rem;
-  padding-top: 11rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 10vh;
   padding-bottom: 0rem;
-  //border: 1px solid red;
-
-  @media screen and (max-width: 950px) {
-    padding: 3rem;
-    padding-top: 6rem;
-    padding-bottom: 0rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 2rem;
-    padding-top: 5.5rem;
-    padding-bottom: 0rem;
-  }
-
-  @media screen and (min-width: 1800px) {
-    padding: 25rem;
-    padding-top: 12rem;
-    padding-bottom: 0rem;
-  }
-
-  @media screen and (min-width: 2300px) {
-    padding: 35rem;
-    padding-top: 12rem;
-    padding-bottom: 0rem;
-  }
-
-  @media screen and (min-width: 2600px) {
-    padding: 45rem;
-    padding-top: 12rem;
-    padding-bottom: 0rem;
-  }
-
-  @media screen and (min-width: 2900px) {
-    padding: 55rem;
-    padding-top: 12rem;
-    padding-bottom: 0rem;
-  }
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border: 2px solid red;
 }
 
 .head-text {
   font-family: folsom-black;
-  font-size: 2.5rem;
+  font-size: 2.88rem;
   padding-bottom: 10px;
 
   span {
@@ -71,10 +40,45 @@
 }
 
 article {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 
   p {
     padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .app-block {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-block {
+    padding: 2rem;
+    padding-top: 5.5rem;
+    padding-bottom: 0rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .app-block {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .app-block {
+    padding-left: 30rem;
+    padding-right: 30rem;
+  }
+}
+
+@media screen and (min-width: 2600px) {
+  .app-block {
+    padding-left: 45rem;
+    padding-right: 45rem;
   }
 }
 
@@ -87,13 +91,9 @@ article {
 }
 
 .italic {
-  font-style: italic;
+  font-family: sfp-pro-bold-italic;
 }
 
 .bold {
   font-weight: bold;
-}
-
-.hideElement {
-  visibility: hidden;
 }

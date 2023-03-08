@@ -1,12 +1,10 @@
+.hiddenWidthNavBar {
+}
+
 .app_selimovic_presentation {
 }
 
 .app_selimovic_quisuisje {
-  display: flex;
-
-  article {
-  }
-
   .app_selimovic_quisuisje_img {
     display: flex;
     align-items: start;
@@ -14,26 +12,35 @@
 
     img {
       width: 400px;
-      margin-top: -1rem;
+      margin-top: -2rem;
+    }
+  }
 
-      @media screen and (max-width: 600px) {
-        margin-top: 0rem;
-        width: 250px;
+  @media screen and (max-width: 1100px) {
+    .app_selimovic_quisuisje_img {
+      img {
+        width: 300px;
+        margin-top: -9rem;
       }
     }
   }
 
-  @media screen and (max-width: 1000px) {
-    display: block;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
 
     .app_selimovic_quisuisje_img {
-      justify-content: center;
+      img {
+        width: 250px;
+        margin-top: 0rem;
+      }
     }
   }
 
   @media screen and (max-width: 600px) {
-    img {
-      display: none;
+    .app_selimovic_quisuisje_img {
+      img {
+        //display: none;
+      }
     }
   }
 }

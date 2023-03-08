@@ -7,8 +7,8 @@ import "./Services.scss";
 
 const Services = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: 0.5 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.2 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.4 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.4 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -42,57 +42,38 @@ const Services = () => {
       >
         <article>
           <div className="app_services_block ">
-            <div className="app_services_block_point hideElement">
-              <div className="app_services_show_point"></div>
-            </div>
             <div className="head-text center">Conception</div>
           </div>
 
           <div className="app_services_block center">
-            <div className="app_services_block_point">
-              <div className="app_services_show_point"></div>
-            </div>
             <p className="center">
-              Après m’être assuré d’avoir compris vos objectifs et d’avoir déterminer les éléments nécessaires à la
-              réalisation du projet, je planifie les différentes étapes de celui-ci en fonction des contraintes
-              imposées. Je conçois <span className="bold">VOTRE</span> projet en fonction de{" "}
-              <span className="bold">VOS</span> besoins
+              Je prends le temps de bien comprendre tes objectifs et tes besoins, afin de planifier chaque étape du
+              projet en fonction de tes contraintes. Je ne conçois pas <span className="bold">MON</span> projet, mais{" "}
+              <span className="bold">TON</span> projet !
             </p>
           </div>
         </article>
 
         <motion.article whileInView={{ y: [50, 0] }} transition={{ duration: 1 }} className="jump">
           <div className="app_services_block ">
-            <div className="app_services_block_point hideElement">
-              <div className="app_services_show_point"></div>
-            </div>
             <div className="head-text center">RÉALISATION</div>
           </div>
           <div className="app_services_block">
-            <div className="app_services_block_point">
-              <div className="app_services_show_point"></div>
-            </div>
             <p className="center">
-              En respectant et en m’imprégnant de votre charte graphique, je mets en œuvre les éléments nécessaires à la
-              réalisation du projet, tout en respectant les spécifications définies lors de la phase de conception.
+              Je suis fidèle à ta charte graphique et je mets en place tous les éléments nécessaires pour concrétiser
+              ton projet, tout en respectant les spécifications que nous avons définies ensemble.
             </p>
           </div>
         </motion.article>
 
         <motion.article whileInView={{ y: [50, 0] }} transition={{ duration: 1 }} className="jump">
           <div className="app_services_block ">
-            <div className="app_services_block_point hideElement">
-              <div className="app_services_show_point"></div>
-            </div>
             <div className="head-text center">AUTOMATISATION</div>
           </div>
           <div className="app_services_block">
-            <div className="app_services_block_point">
-              <div className="app_services_show_point"></div>
-            </div>
             <p className="center">
-              Via la mise en place de logiciels de création graphique très simple d’utilisation, je m’assure de vous
-              donner la possibilité de décliner certains supports vous-même, et sans mon intervention !
+              Grâce à des outils de création graphique ultra-simples à utiliser. Je te donne les moyens de décliner
+              certains supports toi-même, sans avoir besoin de moi. Tu es autonome !
             </p>
           </div>
         </motion.article>
@@ -105,10 +86,10 @@ const Services = () => {
         transition={{ duration: 0.5, ease: "linear" }}
         className="app_services_two app-block"
       >
-        {isVisible2 && (
+        {isVisible2 ? (
           <motion.div
             whileInView={{ y: [-100, 0] }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="app_services_schema_services"
           >
             <div className="line"></div>
@@ -117,7 +98,7 @@ const Services = () => {
                 <div className="point_texte_conception">Conception</div>
               </div>
               <motion.div
-                animate={{ y: [0, 250], scale: [1, 50] }}
+                animate={{ y: [0, 300], scale: [1, 50] }}
                 transition={{
                   y: { duration: 1, delay: 0.5 },
                   scale: { duration: 1, delay: 1 },
@@ -131,15 +112,18 @@ const Services = () => {
               </div>
             </div>
           </motion.div>
-        )}
-        {!isVisible2 && (
+        ) : (
           <div className="app_services_schema_services">
             <div className="line"></div>
             <div className="all_point">
               <div className="point">
                 <div className="point_texte_conception">Conception</div>
               </div>
-              <motion.div animate={{ y: [200, 0], scale: [50, 1] }} transition={{ duration: 5 }} className="point">
+              <motion.div
+                animate={{ y: [100, 0], scale: [50, 1] }}
+                transition={{ y: { duration: 2 }, scale: { duration: 2 } }}
+                className="point"
+              >
                 <div className="point_texte_realisation">Réalisation</div>
               </motion.div>
               <div className="point">
@@ -149,23 +133,33 @@ const Services = () => {
           </div>
         )}
 
-        <article className="app_services_two_texte center">
-          <p className="head-text">
-            De la prise de contact à la réalisation finale, 5 étapes importantes pour répondre à vos besoins :
-          </p>
-          <p className="bold jump">
-            1. Échange par téléphone ou par mail fin de discuter du projet dans la globalité (budget, brief, deadline…).
-          </p>
-          <p className="bold">
-            2. Organisation d’une réunion physique ou en distanciel pour définir les objectifs du projet, ainsi que pour
-            connaitre votre vision sur le style souhaité.
-          </p>
-          <p className="bold">3. Réalisation de différents moodboard basé sur nos discussions.</p>
-          <p className="bold">4. Une fois les 3 premières étapes validées : Début de la réalisation</p>
-          <p className="bold">
-            5. Modification de la création en fonction de vos commentaires, jusqu’à trouver le design parfait.
-          </p>
-        </article>
+        {isVisible2 && (
+          <article className="app_services_two_texte center">
+            <p className="head-text">Voici les 5 étapes clés de mon processus</p>
+            <p className="jump">
+              <span>PRENDRE CONTACT</span>
+              On discute du projet par téléphone ou par mail pour parler de tout ce qui est important (budget, brief,
+              deadline…).
+            </p>
+            <p>
+              <span>SE RENCONTRER</span>
+              On se voit en personne ou en distanciel pour définir les objectifs du projet et discuter de votre vision
+              pour le style souhaité.
+            </p>
+            <p>
+              <span>MOODBOARD</span>Je crée plusieurs moodboards basés sur nos discussions pour vous donner une idée
+              visuelle de ce que je pense pour votre projet.
+            </p>
+            <p>
+              <span>RÉALISATION</span>Une fois que nous avons validé les trois premières étapes, je commence la
+              réalisation de votre projet.
+            </p>
+            <p>
+              <span>MODIFICATION</span>Je modifie la création en fonction de vos commentaires jusqu’à ce que nous
+              trouvions le design parfait. Je suis là pour vous satisfaire !
+            </p>
+          </article>
+        )}
       </motion.div>
     </div>
   );

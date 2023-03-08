@@ -8,6 +8,11 @@
   src: url("./assets/sfppro/sfp-pro-regular.ttf");
   font-display: swap;
 }
+@font-face {
+  font-family: "sfp-pro-bold-italic";
+  src: url("./assets/sfppro/sfp-pro-bold-italic.ttf");
+  font-display: swap;
+}
 
 :root {
   --font-base: sans-serif;
@@ -27,4 +32,5 @@
 * {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }

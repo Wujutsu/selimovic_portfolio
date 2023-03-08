@@ -7,7 +7,7 @@ import "./Selimovic.scss";
 
 const Selimovic = () => {
   const [widthWindows, setWidthWindows] = useState(0);
-  const [ref1, isVisible1] = useInView({ threshold: 0.6 });
+  const [ref1, isVisible1] = useInView({ threshold: 0.5 });
   const [ref2, isVisible2] = useInView({ threshold: 0.5 });
   const variantsVisibility = {
     visible: {
@@ -37,7 +37,7 @@ const Selimovic = () => {
         variants={variantsVisibility}
         animate={isVisible1 ? "visible" : "hidden"}
         transition={{ duration: 0.5, ease: "linear" }}
-        className="app_selimovic_presentation app-block "
+        className="app_selimovic_presentation app-block"
       >
         <article>
           <div className="head-text">
@@ -50,7 +50,7 @@ const Selimovic = () => {
             En <span>Freelance</span>
           </div>
 
-          <p className="italic bold jump">
+          <p className="italic jump">
             “Une identité visuelle forte est cruciale pour toute entreprise qui souhaite se démarquer et gagner en
             visibilité.”
           </p>
@@ -78,23 +78,24 @@ const Selimovic = () => {
         <article>
           <div className="head-text">Qui suis-je ?</div>
           <p>
-            Le moustachu {widthWindows > 1000 ? `à ta droite` : ``}, c’est moi ! Passionné par le design depuis mon
-            adolescence, je réalise des identités visuelles depuis très longtemps.
+            Hey toi ! Si tu regardes {widthWindows > 900 ? `à ta droite` : `en bas`}, tu vois un moustachu plein de
+            talent et de passion, c'est moi ! Depuis mon adolescence, je suis obsédé par le design et j'ai passé des
+            années à créer des identités visuelles de folie.
           </p>
 
           <p>
-            Après avoir obtenu mon baccalauréat, cap sur le monde de la communication et du marketing, pour me former au
-            monde professionnel tout en continuant d’apprendre le design en autodidacte.
+            Après avoir décroché mon baccalauréat, j'ai foncé dans le monde de la communication et du marketing pour
+            apprendre la communication et continuer le design en autodidacte.
           </p>
 
           <p>
-            C’est donc avec une licence en poche (et un début de Master en design) que je me consacre aujourd’hui à
-            temps plein à mon activité de freelance.
+            Maintenant, avec une licence et un début de Master en design dans ma poche, je suis fier de travailler à
+            temps plein en freelance.
           </p>
 
           <p>
-            Ayant déja eu la chance de travailler pour des clients aux besoins variés, je me tiens à votre disposition
-            pour échanger avec vous sur une potentielle future collaboration.
+            J'ai déjà eu la chance de travailler avec des clients aux besoins variés, alors n'hésite pas à me contacter
+            pour discuter d'une collaboration potentielle. Je suis prêt à relever tous les défis !
           </p>
         </article>
         {isVisible2 && (

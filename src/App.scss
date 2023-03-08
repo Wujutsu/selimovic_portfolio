@@ -13,9 +13,9 @@
   overflow: hidden;
   padding-left: 5rem;
   padding-right: 5rem;
-  padding-top: 10vh;
+  padding-top: 17vh;
   padding-bottom: 0rem;
-  min-height: 90vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ article {
 @media screen and (max-width: 600px) {
   .app-block {
     padding: 2rem;
-    padding-top: 5vh;
+    padding-top: 10vh;
     padding-bottom: 0rem;
   }
 }

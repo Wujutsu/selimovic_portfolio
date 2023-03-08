@@ -78,18 +78,18 @@ const Selimovic = () => {
         <article>
           <div className="head-text">Qui suis-je ?</div>
           <p>
-            Hey toi ! Si tu regardes {widthWindows > 900 ? `à ta droite` : `en bas`}, tu vois un moustachu plein de
+            Hey toi ! Si tu regardes {widthWindows > 900 ? `à ta droite` : `en bas`}, tu verras un moustachu plein de
             talent et de passion, c'est moi ! Depuis mon adolescence, je suis obsédé par le design et j'ai passé des
             années à créer des identités visuelles de folie.
           </p>
 
           <p>
-            Après avoir décroché mon baccalauréat, j'ai foncé dans le monde de la communication et du marketing pour
+            Après avoir décroché mon baccalauréat. J'ai foncé dans le monde de la communication et du marketing pour
             apprendre la communication et continuer le design en autodidacte.
           </p>
 
           <p>
-            Maintenant, avec une licence et un début de Master en design dans ma poche, je suis fier de travailler à
+            Maintenant, avec une licence et un début de Master en design dans ma poche. Je suis fier de travailler à
             temps plein en freelance.
           </p>
 
@@ -100,7 +100,7 @@ const Selimovic = () => {
         </article>
         {isVisible2 && (
           <motion.div
-            whileInView={{ x: [300, 0], y: [-100, 0], scale: [1.8, 1], opacity: [0, 1] }}
+            whileInView={{ x: [300, 0], scale: [1.8, 1], opacity: [0, 1] }}
             transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >
@@ -114,7 +114,7 @@ const Selimovic = () => {
         )}
         {!isVisible2 && (
           <motion.div
-            whileInView={{ x: [0, 300], y: [0, -100], scale: [1, 1.8], opacity: [1, 0] }}
+            whileInView={{ x: [0, 300], scale: [1, 1.8], opacity: [1, 0] }}
             transition={{ duration: 0.8 }}
             className="app_selimovic_quisuisje_img"
           >

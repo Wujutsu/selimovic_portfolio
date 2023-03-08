@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { images } from "../../constants";
 
 import "./Services.scss";
 
 const Services = () => {
-  const [widthWindows, setWidthWindows] = useState(0);
   const [ref1, isVisible1] = useInView({ threshold: 0.4 });
-  const [ref2, isVisible2] = useInView({ threshold: 0.4 });
+  const [ref2, isVisible2] = useInView({ threshold: 0.3 });
   const variantsVisibility = {
     visible: {
       opacity: 1,
@@ -17,18 +15,6 @@ const Services = () => {
       opacity: 0,
     },
   };
-
-  function updateSizeWidthWindows() {
-    setWidthWindows(document.documentElement.clientWidth + 17);
-  }
-
-  useEffect(() => {
-    updateSizeWidthWindows();
-  }, []);
-
-  window.addEventListener("resize", () => {
-    updateSizeWidthWindows();
-  });
 
   return (
     <div className="app_services">
@@ -88,7 +74,7 @@ const Services = () => {
       >
         {isVisible2 ? (
           <motion.div
-            whileInView={{ y: [-100, 0] }}
+            whileInView={{ y: [-150, 0] }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="app_services_schema_services"
           >
@@ -113,53 +99,53 @@ const Services = () => {
             </div>
           </motion.div>
         ) : (
-          <div className="app_services_schema_services">
+          <motion.div
+            whileInView={{ y: [0, -150] }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="app_services_schema_services"
+          >
             <div className="line"></div>
             <div className="all_point">
               <div className="point">
-                <div className="point_texte_conception">Conception</div>
+                <div className="point_texte_conception"></div>
               </div>
               <motion.div
-                animate={{ y: [100, 0], scale: [50, 1] }}
-                transition={{ y: { duration: 2 }, scale: { duration: 2 } }}
+                animate={{ y: [0, 0], scale: [50, 1] }}
+                transition={{ y: { duration: 1 }, scale: { duration: 1 } }}
                 className="point"
-              >
-                <div className="point_texte_realisation">Réalisation</div>
-              </motion.div>
+              ></motion.div>
               <div className="point">
-                <div className="point_texte_automatisation">Automatisation</div>
+                <div className="point_texte_automatisation"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
-        {isVisible2 && (
-          <article className="app_services_two_texte center">
-            <p className="head-text">Voici les 5 étapes clés de mon processus</p>
-            <p className="jump">
-              <span>PRENDRE CONTACT</span>
-              On discute du projet par téléphone ou par mail pour parler de tout ce qui est important (budget, brief,
-              deadline…).
-            </p>
-            <p>
-              <span>SE RENCONTRER</span>
-              On se voit en personne ou en distanciel pour définir les objectifs du projet et discuter de votre vision
-              pour le style souhaité.
-            </p>
-            <p>
-              <span>MOODBOARD</span>Je crée plusieurs moodboards basés sur nos discussions pour vous donner une idée
-              visuelle de ce que je pense pour votre projet.
-            </p>
-            <p>
-              <span>RÉALISATION</span>Une fois que nous avons validé les trois premières étapes, je commence la
-              réalisation de votre projet.
-            </p>
-            <p>
-              <span>MODIFICATION</span>Je modifie la création en fonction de vos commentaires jusqu’à ce que nous
-              trouvions le design parfait. Je suis là pour vous satisfaire !
-            </p>
-          </article>
-        )}
+        <article className="app_services_two_texte center">
+          <p className="head-text">Voici les 5 étapes clés de mon processus</p>
+          <p className="jump">
+            <span>PRENDRE CONTACT</span>
+            On discute du projet par téléphone ou par mail pour parler de tout ce qui est important (budget, brief,
+            deadline…).
+          </p>
+          <p>
+            <span>SE RENCONTRER</span>
+            On se voit en personne ou en distanciel pour définir les objectifs du projet et discuter de votre vision
+            pour le style souhaité.
+          </p>
+          <p>
+            <span>MOODBOARD</span>Je crée plusieurs moodboards basés sur nos discussions pour vous donner une idée
+            visuelle de ce que je pense pour votre projet.
+          </p>
+          <p>
+            <span>RÉALISATION</span>Une fois que nous avons validé les trois premières étapes, je commence la
+            réalisation de votre projet.
+          </p>
+          <p>
+            <span>MODIFICATION</span>Je modifie la création en fonction de vos commentaires jusqu’à ce que nous
+            trouvions le design parfait. Je suis là pour vous satisfaire !
+          </p>
+        </article>
       </motion.div>
     </div>
   );

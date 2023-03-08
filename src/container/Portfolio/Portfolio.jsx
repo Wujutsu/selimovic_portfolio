@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,7 +7,6 @@ import { images } from "../../constants";
 import "./Portfolio.scss";
 
 const Portfolio = () => {
-  const [widthWindows, setWidthWindows] = useState(0);
   const [ref1, isVisible1] = useInView({ threshold: 0.5 });
   const variantsVisibility = {
     visible: {
@@ -17,18 +16,6 @@ const Portfolio = () => {
       opacity: 0,
     },
   };
-
-  function updateSizeWidthWindows() {
-    setWidthWindows(document.documentElement.clientWidth + 17);
-  }
-
-  useEffect(() => {
-    updateSizeWidthWindows();
-  }, []);
-
-  window.addEventListener("resize", () => {
-    updateSizeWidthWindows();
-  });
 
   return (
     <motion.div
@@ -47,7 +34,12 @@ const Portfolio = () => {
           <Typewriter options={{ autoStart: true, loop: true, delay: 100, strings: ["Portfolio selimovic"] }} />
         </div>
         <div className="app_portfolio_btn">
-          <a href="https://www.behance.net/slimnidbouhou2/moodboards" alt="redirection behance" target="_blank">
+          <a
+            href="https://www.behance.net/slimnidbouhou2/moodboards"
+            alt="redirection behance"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button>Cliquez ici</button>
           </a>
         </div>

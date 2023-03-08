@@ -81,13 +81,19 @@ const Contact = () => {
           {etatMail && <div className="message_succes">Message envoyé !</div>}
 
           <div className="app_contact_reseaux">
-            <a href="https://www.instagram.com/selimovicdesign/" aria-label="redirect insta" target="_blank">
+            <a
+              href="https://www.instagram.com/selimovicdesign/"
+              aria-label="redirect insta"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={images.logoInsta} alt="logo insta" />
             </a>
             <a
               href="https://www.linkedin.com/in/s%C3%A9lim-nidbouhou-a1852821a/"
               aria-label="redirect linkedin"
               target="_blank"
+              rel="noreferrer"
             >
               <img src={images.logoLinkedin} alt="logo linkedin" />
             </a>

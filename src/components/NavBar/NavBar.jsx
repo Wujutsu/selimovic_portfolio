@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import React, { useState } from "react";
+import { HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 import { images } from "../../constants";
@@ -53,8 +53,8 @@ const NavBar = () => {
         />
         {!showNav ? (
           <motion.ul
-            whileInView={{ width: [40, 60, 40] }}
-            transition={{ duration: 2, delay: 0, repeat: Infinity }}
+            whileInView={{ width: [40, 50, 40] }}
+            transition={{ duration: 1, delay: 0, repeat: Infinity }}
             className="app__navbar-links-empty"
           ></motion.ul>
         ) : (
@@ -64,7 +64,7 @@ const NavBar = () => {
             className="app__navbar-links"
           >
             {menu.map((item, index) =>
-              item == scrollSelectNav ? (
+              item === scrollSelectNav ? (
                 <li style={{ backgroundColor: `black` }} key={`link-${item}`}>
                   <a style={{ color: `white` }} href={`#${item}`} aria-label="Redirect menu">
                     {item}

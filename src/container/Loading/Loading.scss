@@ -35,10 +35,10 @@
 
       .app_loading_bar_progress {
         border-radius: 20px;
-        height: 19px;
+        height: 20.5px;
         max-width: calc(100% - 8px);
         margin-left: 1.5%;
-        margin-top: 3px;
+        margin-top: 2px;
         background-color: var(--white-color);
 
         animation: loadingBarProgress linear var(--selimovic-duration-first-anim);
